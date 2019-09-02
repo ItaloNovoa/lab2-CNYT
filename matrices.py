@@ -143,17 +143,21 @@ def Hermitian(m1):
         return True
     else:
         return False
-# m=[[(2,0),(3,0)]]
-# m1=[[(4,0),(6,0),(3,0)]]
+# m1=[[(2,0),(3,0)]]
+# m2=[[(4,0),(6,0),(3,0)]]
 def ProductoTensor(m1,m2):
     LaMegaMatriz=[]
     #[[(0,0)]*(len(m1[0])*len(m2[0]))]*(len(m1)*len(m2))
     for i in range(len(m1)):
-        Matrizes=[]
-        for j in range(len(m1[i])):
-            Matrizes.append(complejoPorMatriz(m1[i][j],m2))
-        LaMegaMatriz.append(Matrizes)
-    return (LaMegaMatriz)
+        LaMatriz=[[]]*len(m2)
+        for j in range(len(m1[i])):            
+            m3=complejoPorMatriz(m1[i][j],m2)
+            for k in range(len(m2)):
+                LaMatriz[k]=LaMatriz[k]+m3[k]
+        for k in range(len(m2)):
+            LaMegaMatriz.append(LaMatriz[k])
+        
+    return LaMegaMatriz
                         
 
             
@@ -177,7 +181,6 @@ def bonita(mi):
                 print(str(mi[i][j][0]), end= " ")
             else:
                 print(str(mi[i][j][0])+str(mi[i][j][1])+"i", end= " ")
-                
         print()
         
 #recibe dos tuplas con una parte real y otra imaginaria
@@ -241,6 +244,11 @@ class TestUM(unittest.TestCase):
     def test_caso_Hermitian(self):
         m1=[[(5,0),(4,5),(6,-16)],[(4,-5),(13,0),(7,0)],[(6,16),(7,0),(-2.1,0)]]        
         self.assertEqual(True,Hermitian(m1))
+    #ProductoTensor    
+    def test_caso_ProductoTensor(self):
+        m=[[(1,0),(2,0)],[(3,0),(4,0)]]
+        m1=[[(1,0),(2,0),(3,0)],[(1,0),(2,0),(3,0)],[(1,0),(2,0),(3,0)]]
+        self.assertEqual([[(1, 0), (2, 0), (3, 0), (2, 0), (4, 0), (6, 0)], [(1, 0), (2, 0), (3, 0), (2, 0), (4, 0), (6, 0)], [(1, 0), (2, 0), (3, 0), (2, 0), (4, 0), (6, 0)], [(3, 0), (6, 0), (9, 0), (4, 0), (8, 0), (12, 0)], [(3, 0), (6, 0), (9, 0), (4, 0), (8, 0), (12, 0)], [(3, 0), (6, 0), (9, 0), (4, 0), (8, 0), (12, 0)]],ProductoTensor(m,m1))
         
         
 
