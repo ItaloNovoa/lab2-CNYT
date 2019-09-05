@@ -206,13 +206,19 @@ def resta(c1,c2):
 
 class TestUM(unittest.TestCase):
     #suma
+    def test_caso_sumaVector_1(self):
+        self.assertEqual([[(8, -4), (11, 0)]],sumaMatrices([[[3,2],[4,-2]]],[[[5,-6],[7,2]]]))
     def test_caso_sumaMatriz_1(self):
         self.assertEqual([[(8, -4), (11, 0)], [(3, 7), (-9, -7)]],sumaMatrices([[[3,2],[4,-2]],[[1,2],[3,2]]],[[[5,-6],[7,2]],[[2,5],[-12,-9]]]))
-    #Negativa de Matriz   
+    #Negativa de Matriz
+    def test_caso_NegativaDeVector_1(self):
+        self.assertEqual([[(-5, 6), (-7, -2)]],negativaMatriz([[[5,-6],[7,2]]]))
     def test_caso_NegativaDeMatriz_1(self):
         self.assertEqual([[(-5, 6), (-7, -2)], [(-2, -5), (12, 9)]],negativaMatriz([[[5,-6],[7,2]],[[2,5],[-12,-9]]]))
     #complejoPorMatriz
     def test_caso_complejoPorMatriz_1(self):
+        self.assertEqual([[(3, 1), (3, 1)],[(3,1),(3,1)]],complejoPorMatriz((3,1),[[(1,0),(1,0)],[(1,0),(1,0)]]))
+    def test_caso_complejoPorVector_1(self):
         self.assertEqual([[(3, 1), (3, 1), (3, 1)]],complejoPorMatriz((3,1),[[(1,0),(1,0),(1,0)]]))
     #transpuesta
     def test_caso_transpuesta(self):
