@@ -125,6 +125,9 @@ ProductoTensor(m,m1)
 #### para ejecutar el archivo matrices.py sigua las siguientes intrucciones:
 
 1. Descargue el repositorio
+~~~~
+git clone https://github.com/ItaloNovoa/lab2-CNYT.git
+~~~~
 2. Ingrese al cmd/Terminal o simbolo del sistema
 3. Ingresar a la carpeta de archivo 
 4. digitar (Windows):
