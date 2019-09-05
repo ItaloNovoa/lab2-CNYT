@@ -1,4 +1,24 @@
 # lab2 CNYT - Laboratorio 2 sobre operaciones en matrices complejas
+### Descripcion
+#
+#### Este programa crea una libreria que implementa operaciones algebraicas sobre vectores y matrizes para numeros complejos C de la forma (parte real,parte imaginaria), vectores de la forma [[C1,C2,........,Cn]] y matrices de la forma [[C1-1,C1-2,...C1-n],[C2-1,C2-2,........,C2-n],........[Cn-1,Cn-2,....,Cn-n] y las siguientes funciones:
+
+- Adición de vectores complejos.
+- Inversa de vectores complejos.
+- Multiplicación escalar de vectores complejos.
+- Adición de matrices complejos.
+- Inversa de matrices complejos.
+- Multiplicación escalar de matrices complejas.
+- Matriz transpuesta
+- Matriz conjugada
+- Matriz adjunta
+- Función para calcular la "acción" de una matriz sobre un vector.
+- Norma de matrices
+- Distancia entrematrices
+- Revisar si es unitaria
+- Revisar si es Hermitian
+- Producto tensor.
+
 ### Suma Matrices
 #
 #### recibe dos matrices con una parte real y una imaginaria, y retorna la matriz resultado de la suma
@@ -78,4 +98,9 @@
 ##### --> ProductoTensor(m,m1)
 
 # Pruebas
-#### Al compilar el archivo automaticamente se ejecutan 12 pruebas que verifican todas las operaciones especificadas anteriormente.
+#### Al compilar el archivo automaticamente se ejecutan 15 pruebas que verifican todas las operaciones especificadas anteriormente.
+#### para ejecutar el archivo matrices.py sigua las siguientes intrucciones:
+- 1. Descargue el repositorio
+- 2. Ingrese al cmd/Terminal o simbolo del sistema
+- 3. Ingresar a la carpeta de archivo 
+- 4. digitar python  matrices.py (Windows) Ó python3 matrices.py (Ubuntu, Mac)
